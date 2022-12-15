@@ -58,7 +58,7 @@
         }
     }
 
-            case"sqrt";
+            case"pow";
             foreach($numbers as $number) {
                 if (!is_numeric($number)) {
                     $json = ["REPORT" => "NaN"];
