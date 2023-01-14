@@ -1,12 +1,12 @@
+@ -1,20 +1,25 @@
 <?php
-    //only one switch case is commented, as there is no need to comment them individually, only the operation changes
-    //get the operation and numbers from the URL path
-    $path = explode("/", $_SERVER['REQUEST_URI']);
-    $operation = $path[2];
-    $numbers = array_slice($path, 3);
+
+    //explode the numbers string into an array
+    $numbers = explode(",", filter_input(INPUT_GET, "number"));
     $json = [];
+
     //switch to determine the operation
-    switch($operation) {
+    switch(filter_input(INPUT_GET, "operation")) {
         case"add":
             //loop through numbers to check if they are numeric
             foreach ($numbers as $number) {
@@ -19,63 +19,44 @@
                     $json = ["REPORT" => "OK", "RESULT" => array_sum($numbers)];
                 }
             }
+
             break;
+
         case"sub":
             foreach ($numbers as $number) {
                 if (!is_numeric($number)) {
-                    $json = ["REPORT" => "NaN"];
-                    break;
-                } else {
-                    $result = reset($numbers);
-                    foreach (array_slice($numbers, 1) as $value) {
-                        $result -= $value;
-                        break;
-                    }
+@ -29,8 +34,8 @@
                     $json = ["REPORT" => "OK", "RESULT" => $result];
                 }
             }
+
             break;
+
         case"mul":
             foreach ($numbers as $number) {
                 if (!is_numeric($number)) {
-                    $json = ["REPORT" => "NaN"];
-                    break;
-                } else {
-                    $result = reset($numbers);
-                    foreach (array_slice($numbers, 1) as $value) {
-                        $result *= $value;
-                        break;
-                    }
+@ -45,8 +50,8 @@
                     $json = ["REPORT" => "OK", "RESULT" => $result];
                 }
             }
+
             break;
+
         case"div":
             foreach ($numbers as $number) {
                 if (!is_numeric($number)) {
-                    $json = ["REPORT" => "NaN"];
-                    break;
-                } else {
-                    $result = reset($numbers);
-                    foreach (array_slice($numbers, 1) as $value) {
-                        $result /= $value;
-                        break;
-                    }
+@ -61,9 +66,8 @@
                     $json = ["REPORT" => "OK", "RESULT" => $result];
                 }
             }
+
+
             break;
+
         case"pow":
             foreach ($numbers as $number) {
                 if (!is_numeric($number)) {
-                    $json = ["REPORT" => "NaN"];
-                    break;
-                } else {
-                    $result = reset($numbers);
-                    foreach (array_slice($numbers, 1) as $value) {
-                        $result **= $value;
-                    }
-                    $json = ["REPORT" => "OK", "RESULT" => $result];
+@ -78,4 +82,5 @@
                 }
             }
     }
