@@ -2,4 +2,4 @@ Options +SymLinksIfOwnerMatch
 RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)$ math.php?=url=$1 [QSA,L]
+RewriteRule ^(.*)$ Math.php?=url=$1 [QSA,L]
