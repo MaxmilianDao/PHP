@@ -1,0 +1,68 @@
+            h1 {
+                color: rgba(225, 225, 225);
+                margin: 10px 0px 10px 0;
+            }
+
+            p {
+                color: red;
+                font-size: 14px;
+            }
+
+            label {
+                color: rgba(230, 230, 230);
+                margin-right: 0px;
+            }
+
+            body {
+                font-family: 'Montserrat', sans-serif;
+                background-color: rgba(5, 5, 5);
+            }
+
+            input[type=text], input[type=password] {
+                width: 100%;
+                margin: 12px 0px;
+                padding: 12px;
+                display: inline-block;
+                border: none;
+                border-bottom: 1px solid rgba(200, 200, 200);
+                border-radius: 10px;
+                box-sizing: border-box;
+                background: transparent;
+                color: rgba(220, 220, 220);
+            }
+
+            button {
+                background-color: rgba(143, 41, 207, 0.65);
+                color: rgba(220, 220, 220);
+                font-size: large;
+                margin-top: 12px;
+                padding: 10px;
+                width: 60%;
+                border: none;
+                border-radius: 25px;
+                cursor: pointer;
+                transition: 0.3s;
+                transform: translateX(33%);;
+
+            }
+
+            button:hover {
+                background-color: rgba(143, 41, 207, 0.5);
+                color: rgba(220, 220, 220, 0.8);
+            }
+
+            .container {
+                width: 200px;
+                height: 242px;
+                padding: 10px 20px 20px 20px;
+                background: rgba(255, 255, 255, 0.1);
+                box-shadow: 0 8px 24px 0 rgba(143, 41, 207, 0.5);
+                border: 0.5px solid rgba(255, 255, 255, 0.08);
+                background-color: rgb(32, 32, 32);
+                border-radius: 5px;
+            }
+
+            .pindik {
+                display: flex;
+                justify-content: center;
+            }
