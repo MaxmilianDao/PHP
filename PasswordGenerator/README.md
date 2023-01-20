@@ -1,6 +1,5 @@
 # Random Password Generator API
-This is a simple PHP-based API that generates random passwords. 
-The API returns a JSON object containing the generated password.
+This is a very dumb PHP-based API that generates random passwords. 
 
 The API accepts 4 parameters in the URL path:
 
@@ -27,7 +26,7 @@ Example output:
 {"password":"aS7#KLmqpVxZJ1t6"}
 ```
 
-## How it works 
+## How does it work? (The sauce)
 It uses the `$_SERVER['REQUEST_URI']` variable to get the parameters from the URL first following with the `explode()` function to split the request URL and `array_splice()` to remove the first parameter which is the name of the API. 
 
 Then it checks if the other parameters are set and assigns default values if they are not.
@@ -36,8 +35,17 @@ It then concatenates possible characters based on the parameters passed, then it
 
 Finally it returns the password in a JSON format.
 
+## How to use 
+1. Clone the repo
+2. Host it on a webserver
+3. See above examples of usage for reference
+
+## Prerequisites
+-Built and tested on PHP 7.0.3
+-A webserver of your choice to host it on 
+
 ### Disclaimer
-This a school assignment and is not a cryptographically secure pseudorandom password generator *and therefore is not safe to use* !
+This a school assignment, `rand()` is not a cryptographically secure pseudorandom number generator *and therefore this password generator is not safe to use* !
 
 The generator does have some bugs, for example: 
 - Not being able to handle long password requests reliably or at all
