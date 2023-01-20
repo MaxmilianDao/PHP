@@ -37,7 +37,7 @@ It then concatenates possible characters based on the parameters passed, then it
 Finally it returns the password in a JSON format.
 
 ### Disclaimer
-This is not a cryptographically secure pseudorandom password generator *and therefore is not safe to use* !
+This a school assignment and is not a cryptographically secure pseudorandom password generator *and therefore is not safe to use* !
 
 The generator does have some bugs, for example: 
 - Not being able to handle long password requests reliably or at all
