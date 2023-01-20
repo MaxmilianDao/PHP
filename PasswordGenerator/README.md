@@ -45,7 +45,7 @@ Finally it returns the password in a JSON format.
 - A webserver of your choice to host it on 
 
 ### Disclaimer
-This a school assignment, `rand()` is not a cryptographically secure pseudorandom number generator *and therefore this password generator is not safe to use* !
+This an assignment for school, `rand()` is not a cryptographically secure pseudorandom number generator *and therefore this password generator is not safe to use* !
 
 The generator does have some bugs, for example: 
 - Not being able to handle long password requests reliably or at all
