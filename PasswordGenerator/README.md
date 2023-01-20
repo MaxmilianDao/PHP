@@ -1,1 +1,45 @@
+# Random Password Generator API
+This is a simple PHP-based API that generates random passwords. 
+The API returns a JSON object containing the generated password.
 
+The API accepts 4 parameters in the URL path:
+
+| Parameter | Description |
+| --- | --- |
+| length | The length of the generated password `(default: 8)` |
+| special | Whether to include special characters in the password `(default: false)` |
+| numbers | Whether to include numbers in the password `(default: false)` |
+| case | hether to make the password randomly case-sensitive `(default: false)` |
+
+The values that parameters can be set to are true and false, except length (which is to be set to a number) !
+
+Example usage:
+
+```
+http://localhost/PassGen.php/16/true/true/true
+```
+
+This will generate a 16 characters long password with special characters, case-sensitive and numbers.
+
+Example output:
+
+```
+{"password":"aS7#KLmqpVxZJ1t6"}
+```
+
+## How it works 
+It uses the `$_SERVER['REQUEST_URI']` variable to get the parameters from the URL first following with the `explode()` function to split the request URL and `array_splice()` to remove the first parameter which is the name of the API. 
+
+Then it checks if the other parameters are set and assigns default values if they are not.
+
+It then concatenates possible characters based on the parameters passed, then it loops and uses the `rand()` function to generate random indexes of the `possible_chars` string, and it constructs the password. 
+
+Finally it returns the password in a JSON format.
+
+### Disclaimer
+This is not a cryptographically secure pseudorandom password generator *and therefore is not safe to use* !
+
+The generator does have some bugs, for example: 
+- Not being able to handle long password requests reliably or at all
+- Sometimes doesn't generate the requested length
+- Can sometimes freak out and not respond with anything 
