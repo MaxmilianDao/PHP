@@ -41,8 +41,8 @@ Finally it returns the password in a JSON format.
 3. See above examples of usage for reference
 
 ## Prerequisites
--Built and tested on PHP 7.0.3
--A webserver of your choice to host it on 
+- Built and tested on PHP 7.0.3
+- A webserver of your choice to host it on 
 
 ### Disclaimer
 This a school assignment, `rand()` is not a cryptographically secure pseudorandom number generator *and therefore this password generator is not safe to use* !
