@@ -1,5 +1,5 @@
 # Random Password Generator API
-This is a very dumb PHP-based API that aims to generates random passwords. 
+This is a very dumb PHP-based API that aims to generate random passwords. 
 
 The API accepts 4 parameters in the URL path:
 
